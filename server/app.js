@@ -1,33 +1,29 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
 const routes = require('./routes/api');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
 
-
-//Create a new express app
+dotenv.config();
 const app = express();
 
 
 //Middleware
+//General middleware
+app.use(express.static('public'))
 app.use(bodyParser.json());
 app.use(routes);
 
 //Error handling middleware
-app.use((err, req, res, next) => {
-    //console.log(err);
+app.use((err, req, res, next) => {    
     res.status(422)
     res.send({error: err.message})
 });
 
 
-//Loads sensitive credentials and settings from .env file to process.env
-dotenv.config();
-
-
-//Establishes connection to MongoDB
+//Establish connection to MongoDB
 mongoose.connect(process.env.DB_CONNECT, 
-                { useNewUrlParser: true, useUnifiedTopology: true }, 
+                { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false}, 
                 () => console.log('Connected to MongoDB'));
 
 

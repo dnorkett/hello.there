@@ -1,0 +1,112 @@
+body{
+    font-family: Raleway;
+    color: rgb(70, 70, 70);
+    background: #bd2a2a;
+    margin: 0;
+    padding: 0;
+}
+
+#homepage{
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 10px 20px;
+    background: #fdfdfd;
+    border-radius: 4px;    
+}
+
+input[type="text"]{
+    display: block;
+    width: 300px;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+label{
+    font-weight: bold;
+}
+
+.title{
+    color: #fff;    
+    font-size: 48px;
+    text-align: center;
+}
+
+#homepage h1{
+    text-align: center;
+    font-size: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+#homepage h1
+
+form{
+    max-width: 350px;
+    margin: 30px auto;
+}
+
+input[type="submit"]{
+    background: #555;
+     color: #fff;
+     border: 0;
+     padding: 10px;
+     font-size: 18px;
+     width: 200px;
+     margin: 0 auto;
+     display: block;
+     cursor: pointer;
+     border-radius: 4px;
+ }
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    padding: 15px 0;
+    background: #eee;
+    list-style-type: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+span{
+    display: inline-block;
+    margin: 0 20px;
+}
+span.dist{
+    color: green;
+    float: right;
+}
+
+span.true{
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
+    background: green;
+}
+
+span.false{
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
+    background: #ff5252;
+}
+
+button{
+    float: right;
+    background: green;
+    border: 0;
+    padding: 5px 10px;
+    color: #fff;
+    display: inline-block;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button.false{display: none;}
