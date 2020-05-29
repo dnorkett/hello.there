@@ -18,11 +18,17 @@ router.get('/api/characters/:id', (req,res, next) => {
 });
 
 //add a new character to the database
-router.post('/api/characters', (req, res, next) => {    
-    Character.create(req.body)
+router.post('/api/characters', (req, res, next) => {
+    Character.findOne({name: req.body.name})
         .then(character => {
-            res.send({character});
-        }).catch(next);    
+            if (!character) {
+                Character.create(req.body)
+                    .then(character => {res.send({character})})
+                    .catch(next)
+            } else {
+                res.send('Character already exists')
+            }
+        });   
 });
 
 //update an existing character in the database

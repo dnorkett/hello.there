@@ -79,24 +79,6 @@ span{
     display: inline-block;
     margin: 0 20px;
 }
-span.dist{
-    color: green;
-    float: right;
-}
-
-span.true{
-    border-radius: 10px;
-    width: 10px;
-    height: 10px;
-    background: green;
-}
-
-span.false{
-    border-radius: 10px;
-    width: 10px;
-    height: 10px;
-    background: #ff5252;
-}
 
 button{
     float: right;

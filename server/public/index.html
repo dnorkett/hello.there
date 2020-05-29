@@ -19,8 +19,58 @@
     <script src="https://unpkg.com/react@15/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
 
-    <script type="text/babel">
     
+    <!-- React Component-->
+    <script type="text/babel">
+        var Characters = React.createClass({
+
+            getInitialState: function(){
+                return({characters: []});
+            },
+
+            render: function(){
+                let characters = this.state.characters;
+
+                characters = characters.map(function(character, index){
+                    return (
+                        <li key={index}>
+                            <span className="name">{character.obj.name}</span>
+                            <span className="species">{character.obj.species}</span>
+                            <span className="home">{character.obj.homePlanet}</span>
+                            <span className="force">{character.obj.forceSensitive}</span>
+                            <span className="quote">{character.obj.notableQuote}</span>
+                        </li>
+                    );
+                });
+
+                return(
+                    <div id="char-container">
+                        <form id="search" onSubmit={this.handleSubmit}>
+                            <label>Enter character name:</label>
+                            <input type="text" ref="char" placeholder="character" required />
+                            <input type="submit" value="Find character" />
+                        </form>
+                        <ul>{characters}</ul>
+                    </div>
+                );
+            },
+
+            handleSubmit: function(e) {                   
+                e.preventDefault;
+                let char = this.refs.char.value;                
+
+                fetch('/api/characters/' + char)
+                    .then(data => data.json())
+                    .then(json => {
+                        this.setState({
+                            characters: json
+                        });                        
+                    });
+            }
+        });
+
+        ReactDOM.render(<Characters/>, document.getElementById('main'));
+
     </script>
 
 </body>
