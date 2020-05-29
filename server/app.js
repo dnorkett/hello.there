@@ -10,7 +10,7 @@ const app = express();
 
 //Middleware
 //General middleware
-app.use(express.static('public'))
+app.use(express.static('react/publicz/'))
 app.use(bodyParser.json());
 app.use(routes);
 
