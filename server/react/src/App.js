@@ -28,6 +28,7 @@ class App extends React.Component {
     let characterDispaly = characters.map((character, index) => 
       <li key={index}>
         <span> {character.name} </span>
+        <span> {character.species} </span>
         <span> {character.homePlanet} </span>
         <span> {character.forceSensitive.toString()} </span>
         <span> {character.notableQuote} </span>
@@ -48,6 +49,7 @@ class App extends React.Component {
           <ul>
           <li key="0123" id="titlebar">
             <span> name </span>
+            <span> species </span>
             <span> homePlanet </span>
             <span> forceSensitive </span>
             <span> notableQuote </span>
