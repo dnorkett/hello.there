@@ -45,7 +45,16 @@ class App extends React.Component {
                 <input type="text" id="searchbar" />
                 <input type="submit" value="Find character" />
             </form>
-          <ul>{characterDispaly}</ul>
+          <ul>
+          <li key="0123" id="titlebar">
+            <span> name </span>
+            <span> homePlanet </span>
+            <span> forceSensitive </span>
+            <span> notableQuote </span>
+            <span> _id </span>        
+          </li>
+            {characterDispaly}
+          </ul>
         </div>
     );
   }

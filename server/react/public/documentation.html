@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8" />    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />    
+    <title>hello.there - A Star Wars API - Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  </head>
+  
+  <body>
+    <h1 class="title">hello.there - A Star Wars API</h1>
+    <h2 class="subtitle">Documentation</h2>
+    <p id="doc"><a href="index.html">Back to home</a></p>
+
+    <section class="documentation">
+        <p>The backend RESTful API allows users to GET, POST, PUT, and DELETE records from the hello.there database.</p>
+
+        <h4 class="heading">Get all characters</h4>
+        <p class="desc">Send a GET request to <span class="code">/api/characters</span></p>
+
+        <h4 class="heading">Get a specific character</h4>
+        <p class="desc">Send a GET request to <span class="code">/api/characters/{characterID}</span></p>
+
+        <h4 class="heading">Add a new character</h4>
+        <p class="desc">Send a POST request to <span class="code">/api/characters/</span> using the following JSON format:</p>
+        <pre>
+            name: {
+                type: String,
+                required: [true, 'name is a required field']
+            },
+            species: {
+                type: String,
+                default: 'unknown species'
+            },
+            forceSensitive: {
+                type: Boolean,
+                default: false
+            },
+            homePlanet: {
+                type: String,
+                default: 'unknown origin'
+            },
+            notableQuote: {
+                type: String,
+                default: 'uh, hello?'
+            }
+        </pre>
+
+        <h4 class="heading">Modify an existing user</h4>
+        <p class="desc">Send a PUT request to <span class="code">/api/characters/{characterID}</span> using the JSON format mentioned above.</p>
+
+        <h4 class="heading">Delete an existing user</h4>
+        <p class="desc">Send a DELETE request to <span class="code">/api/characters/{characterID}</span></p>
+
+    </section>
+    
+    
+
+  </body>
+</html>

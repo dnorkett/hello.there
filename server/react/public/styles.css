@@ -1,3 +1,4 @@
+/* Main API Page */
 body{
     font-family: Raleway;
     color: rgb(70, 70, 70);
@@ -31,6 +32,12 @@ label{
 .title{
     color: #fff;    
     font-size: 48px;
+    text-align: center;
+}
+
+.subtitle{
+    color: #fff;    
+    font-size: 32px;
     text-align: center;
 }
 
@@ -81,4 +88,49 @@ li{
 span{
     display: inline-block;
     margin: 0 20px;    
+}
+
+#titlebar {
+    text-decoration: underline;    
+}
+
+#doc {
+    color:white;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: .75em;
+    position: fixed;
+    top:0;
+    right:10px;
+}
+
+#doc a {
+    color: inherit;
+}
+
+/* Documentation Page */
+.documentation {    
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 10px 20px;
+    background: #fdfdfd;
+    border-radius: 4px;       
+}
+
+.documentation p {
+    margin-bottom: 50px;
+}
+
+pre {
+    margin-top: -30px;
+    background-color: rgb(235, 235, 235);
+    padding: 10px;
+}
+
+.code {
+    background-color: rgb(235, 235, 235);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
+    font-size: .9em;
+    margin: 0;
+    padding: 1px 7px;   
 }
