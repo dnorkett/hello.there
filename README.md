@@ -1,6 +1,7 @@
 # hello.there
 hello.there is a RESTful API used to send and receive Star Wars data. This project was built using Node.js, MongoDB, and React.
 
+
 ## Backend - Node.js / Express
 The backend RESTful API allows users to GET, POST, PUT, and DELETE records from the hello.there database.
 
@@ -41,8 +42,10 @@ Send a PUT request to `/api/characters/{characterID}`using the JSON format menti
 #### Delete an existing user
 Send a DELETE request to `/api/characters/{characterID}`
 
+
 ## Database - MongoDB
 This application uses a NoSQL MongoDB hosted on AWS / N. Virginia (us-east-1)
+
 
 ## Frontend - React
 A simplified graphical user interface was created using React.
