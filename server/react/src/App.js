@@ -12,45 +12,40 @@ class App extends React.Component {
 
   handleChange(e) {
     e.preventDefault();
-    let char = document.getElementById('searchbar').value;
-    console.log(char);
-    console.log(e)
-    
-    
+    let char = document.getElementById('searchbar').value;    
 
-/*     fetch('/api/characters/' + char)
+    fetch('/api/characters/' + char)
         .then(data => data.json())
-        .then(json => {
+        .then(json => {            
             this.setState({
                 characters: json
             });                        
-        }); */
+        });
   }
 
   render() {
     let characters = this.state.characters;
-    
-     characters = characters.map((character, index) => {
+    let characterDispaly = characters.map((character, index) => 
+      <li key={index}>
+        <span> {character.name} </span>
+        <span> {character.homePlanet} </span>
+        <span> {character.forceSensitive.toString()} </span>
+        <span> {character.notableQuote} </span>
+        <span> {character._id} </span>        
+      </li>
       
-        return (
-            <li key={index}>
-                <span className="name">{character.obj.name}</span>
-                <span className="species">{character.obj.species}</span>
-                <span className="home">{character.obj.homePlanet}</span>
-                <span className="force">{character.obj.forceSensitive}</span>
-                <span className="quote">{character.obj.notableQuote}</span>
-            </li>            
-        );
-    }); 
+      );
+    
+    console.log(characters);    
 
     return (
         <div id="char-container">
             <form id="search" onSubmit={this.handleChange}>
-                <label>Enter character name:</label>
-                <input type="text" placeholder="character" id="searchbar" required />
+                <label>Enter character ID, or leave blank for a full list</label>
+                <input type="text" id="searchbar" />
                 <input type="submit" value="Find character" />
             </form>
-            <ul>{characters}</ul>
+          <ul>{characterDispaly}</ul>
         </div>
     );
   }
