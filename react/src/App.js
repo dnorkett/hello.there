@@ -2,6 +2,7 @@ import React from 'react';
 import Get from './Get';
 import Post from './Post';
 import Put from './Put';
+import Delete from './Delete';
 
 
 class App extends React.Component {
@@ -33,6 +34,7 @@ class App extends React.Component {
           <Get updateState={this.updateState}/>
           <Post updateState={this.updateState}/>
           <Put updateState={this.updateState}/>
+          <Delete updateState={this.updateState}/>
 
           <ul>
             <li key="0123" id="titlebar">
