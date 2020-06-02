@@ -18,7 +18,7 @@ const apiLimiter = rateLimit({
 
 //Middleware
 //General middleware
-app.use("/api", apiLimiter);
+app.use("/api/", apiLimiter);
 app.use(express.static('react/public/'))
 app.use(bodyParser.json());
 app.use(routes);

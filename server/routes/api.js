@@ -24,10 +24,10 @@ router.post('/api/characters', (req, res, next) => {
         .then(character => {
             if (!character) {
                 Character.create(req.body)
-                    .then(character => {res.send({character})})
+                    .then(character => {res.send(character)})
                     .catch(next)
-            } else {
-                res.send('Character already exists')
+            } else {                
+                res.send(character);
             }
         });   
 });
