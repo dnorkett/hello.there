@@ -40,7 +40,7 @@ class Put extends React.Component {
 
     render() {
         return (            
-            <form id="putForm" onSubmit={this.putSubmit}>
+            <form id="put" className='tabContent' onSubmit={this.putSubmit}>
                 <label>_id</label>
                 <input type="text" id="putId" />
                 <label>Name</label>

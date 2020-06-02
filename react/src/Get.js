@@ -10,7 +10,7 @@ class Get extends React.Component {
     searchSubmit(e) {
         e.preventDefault();
         let _id = document.getElementById('searchbar').value;    
-    
+            
         fetch('/api/characters/' + _id)
             .then(data => data.json())            
             .then(json => {                           
@@ -21,7 +21,7 @@ class Get extends React.Component {
 
     render() {
         return (            
-            <form id="search" onSubmit={this.searchSubmit}>
+            <form id="get" className='tabContent' onSubmit={this.searchSubmit}>
                 <label>Enter character ID, or leave blank for a full list</label>
                 <input type="text" id="searchbar" />
                 <input type="submit" value="Find character" />

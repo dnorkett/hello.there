@@ -72,12 +72,12 @@ ul{
     text-align: center;    
 }
 
-li{
-    padding: 15px 0;
+.liGrid{
+    padding: 12px 0;
     background: #eee;
     list-style-type: none;
     font-size: 18px;    
-    margin: 10px 0;
+    margin: 4px 0;
     border-radius: 4px;
     display: inline-grid;
     grid-template-columns: 2fr 2fr 2fr 2fr 3fr 3fr;
@@ -85,7 +85,18 @@ li{
     min-width: 800px;
 }
 
-span{
+.liMenu {    
+    list-style-type: none;
+    font-size: 18px;    
+    margin: 10px 20px;
+    display: inline;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;    
+    border-bottom: 1px solid white;
+}
+
+span {
     display: inline-block;
     margin: 0 20px;    
 }

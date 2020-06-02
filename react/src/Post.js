@@ -39,7 +39,7 @@ class Post extends React.Component {
 
     render() {
         return (            
-            <form id="postForm" onSubmit={this.postSubmit}>
+            <form id="post" className='tabContent' onSubmit={this.postSubmit}>
                 <label>Name</label>
                 <input type="text" id="postName" />
                 <label>Species</label>

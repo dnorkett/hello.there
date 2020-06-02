@@ -7,15 +7,23 @@ import Delete from './Delete';
 
 class App extends React.Component {
   constructor(props) {
-    super(props);
-    this.updateState = this.updateState.bind(this);
-    this.state = {characters: [], characterDispaly: []};
+    super(props);     
+    this.state = {
+      characters: [], 
+      characterDispaly: [],
+      showHideGet: true,
+      showHidePost: false,
+      showHidePut: false,
+      showHideDelete: false
+    };
+    this.updateState = this.updateState.bind(this);   
+    this.hideComponent = this.hideComponent.bind(this);
   }
 
 
   updateState = (childData) => {
     let characterDispaly = childData.map((character, index) => 
-      <li key={index}>
+      <li className='liGrid' key={index}>
         <span> {character.name} </span>
         <span> {character.species} </span>
         <span> {character.homePlanet} </span>
@@ -28,16 +36,68 @@ class App extends React.Component {
   }
 
 
-  render() {    
+  hideComponent(name) {
+    console.log(name);
+    switch (name) {
+      case "showHideGet" :
+        this.setState({ 
+          showHideGet: true,
+          showHidePost: false,
+          showHidePut: false,
+          showHideDelete: false
+        });
+        break;
+      case "showHidePost" :
+        this.setState({ 
+          showHideGet: false,
+          showHidePost: true,
+          showHidePut: false,
+          showHideDelete: false
+        });
+        break;
+      case "showHidePut" :
+        this.setState({ 
+          showHideGet: false,
+          showHidePost: false,
+          showHidePut: true,
+          showHideDelete: false
+        });
+        break;
+      case "showHideDelete" :
+        this.setState({ 
+          showHideGet: false,
+          showHidePost: false,
+          showHidePut: false,
+          showHideDelete: true
+        });
+        break; 
+      default:
+        break;
+    }
+  }
+
+
+  render() {     
+    const { showHideGet, showHidePost, showHidePut, showHideDelete }   = this.state;
+
     return (
         <div id="char-container">
-          <Get updateState={this.updateState}/>
-          <Post updateState={this.updateState}/>
-          <Put updateState={this.updateState}/>
-          <Delete updateState={this.updateState}/>
+          <nav>
+            <ul>
+              <li className="liMenu" onClick={() => this.hideComponent("showHideGet")}>Get</li>
+              <li className="liMenu" onClick={() => this.hideComponent("showHidePost")}>Post</li>
+              <li className="liMenu" onClick={() => this.hideComponent("showHidePut")}>Put</li>
+              <li className="liMenu" onClick={() => this.hideComponent("showHideDelete")}>Delete</li>
+            </ul>
+          </nav>
+
+          {showHideGet && <Get updateState={this.updateState}/>}
+          {showHidePost && <Post updateState={this.updateState}/>}
+          {showHidePut && <Put updateState={this.updateState}/>}
+          {showHideDelete && <Delete updateState={this.updateState}/>}
 
           <ul>
-            <li key="0123" id="titlebar">
+            <li className='liGrid' key="0123" id="titlebar">
               <span> name </span>
               <span> species </span>
               <span> homePlanet </span>

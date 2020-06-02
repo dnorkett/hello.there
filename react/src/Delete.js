@@ -28,7 +28,7 @@ class Delete extends React.Component {
 
     render() {
         return (            
-            <form id="search" onSubmit={this.deleteSubmit}>
+            <form id="delete" className='tabContent' onSubmit={this.deleteSubmit}>
                 <label>Enter character ID to be deleted</label>
                 <input type="text" id="deleteId" />
                 <input type="submit" value="Delete character" />
