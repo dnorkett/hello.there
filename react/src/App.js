@@ -36,8 +36,7 @@ class App extends React.Component {
   }
 
 
-  hideComponent(name) {
-    console.log(name);
+  hideComponent(name) {    
     switch (name) {
       case "showHideGet" :
         this.setState({ 

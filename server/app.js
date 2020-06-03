@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const routes = require('./routes/api');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
+const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 
 
@@ -12,12 +13,13 @@ dotenv.config();
 const app = express();
 const apiLimiter = rateLimit({
     windowMs: 15 * 1000, //15 seconds
-    max: 100
+    max: 10
 });
 
 
 //Middleware
 //General middleware
+app.use(helmet());
 app.use("/api/", apiLimiter);
 app.use(express.static('react/public/'))
 app.use(bodyParser.json());
